@@ -5,28 +5,37 @@ import Card from "./Card";
 
 const projects = [
   {
-    title: "React Space",
-    description:
-      "Handy tool belt to create amazing AR components in a React app, with redux integration via middleware️",
-    getImageSrc: () => require("../images/photo1.jpg"),
+    title: "GeoSnap",
+    description: `Full-stack web application designed to help users geotag their photos
+       and visualize them on a beautiful, interactive map. Built with Django,
+        GeoDjango, and Leaflet.js, it combines the power of spatial databases
+         with a modern user interface.`,
+    getImageSrc: () => require("../images/geosnap1.png"),
+    url: "https://github.com/Qenszu/geosnap",
   },
   {
-    title: "React Infinite Scroll",
-    description:
-      "A scrollable bottom sheet with virtualisation support, native animations at 60 FPS and fully implemented in JS land 🔥️",
-    getImageSrc: () => require("../images/photo2.jpg"),
+    title: "Phoone book",
+    description: `A simple React contact list app built for fun while learning React fundamentals. 
+    This project was created to get familiar with React — exploring components, state management, 
+    props, and styling with Tailwind CSS. Nothing serious, just a playground!`,
+    getImageSrc: () => require("../images/preview.png"),
+    url: "https://github.com/Qenszu/phone-book",
   },
   {
-    title: "Photo Gallery",
-    description:
-      "A One-stop shop for photographers to share and monetize their photos, allowing them to have a second source of income",
-    getImageSrc: () => require("../images/photo3.jpg"),
+    title: "Slot Machine Analyzer",
+    description: `This project is a stochastic simulator and ML analyzer 
+    for slot machine mechanics, built to explore RNG distributions and player behavior patterns.`,
+    getImageSrc: () => require("../images/slot-machine.png"),
+    url: "https://github.com/Qenszu/slot-machine-analysis",
   },
   {
-    title: "Event planner",
-    description:
-      "A mobile application for leisure seekers to discover unique events and activities in their city with a few taps",
-    getImageSrc: () => require("../images/photo4.jpg"),
+    title: "Animals Simulation",
+    description: `A Java-based simulation of animal movement on a 2D map, featuring a pheromone system
+     that influences animal behavior. Animals move around a rectangular map, eat grass, and reproduce.
+      When animals reproduce, they leave pheromones on the map — these scents attract other 
+      animals to the same location, creating emergent group behavior over time.`,
+    getImageSrc: () => require("../images/animals.png"),
+    url: "https://github.com/Qenszu/animals-simulation",
   },
 ];
 
@@ -53,6 +62,7 @@ const ProjectsSection = () => {
             title={project.title}
             description={project.description}
             imageSrc={project.getImageSrc()}
+            url={project.url}
           />
         ))}
       </Box>
