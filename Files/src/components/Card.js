@@ -37,6 +37,11 @@ const Card = ({ title, description, imageSrc, url }) => {
         variant="outline"
       >
         Read More
+        <FontAwesomeIcon
+          icon={faArrowRight}
+          size="1x"
+          style={{ marginLeft: "8px" }}
+        />
       </Button>
     </VStack>
   );

@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { useFormik } from "formik";
 import {
   Box,
@@ -12,19 +12,36 @@ import {
   Textarea,
   VStack,
 } from "@chakra-ui/react";
-import * as Yup from 'yup';
+import * as Yup from "yup";
 import FullScreenSection from "./FullScreenSection";
 import useSubmit from "../hooks/useSubmit";
-import {useAlertContext} from "../context/alertContext";
+import { useAlertContext } from "../context/alertContext";
 
 const LandingSection = () => {
-  const {isLoading, response, submit} = useSubmit();
+  const { isLoading, response, submit } = useSubmit();
   const { onOpen } = useAlertContext();
 
   const formik = useFormik({
-    initialValues: {},
-    onSubmit: (values) => {},
-    validationSchema: Yup.object({}),
+    initialValues: {
+      firstName: "",
+      email: "",
+      type: "",
+      comment: "",
+    },
+    onSubmit: async (values) => {
+      await submit("http://exaple.com", values);
+      formik.resetForm();
+    },
+    validationSchema: Yup.object({
+      firstName: Yup.string().required("Pleas enter your Name"),
+      email: Yup.string()
+        .email("Incorrect email")
+        .required("Pleas enter your email"),
+      type: Yup.string().required("Pleas select a type"),
+      comment: Yup.string()
+        .min(10, "Comment must be at least 10 characters")
+        .required("Pleas enetr a comment"),
+    }),
   });
 
   return (
@@ -43,19 +60,12 @@ const LandingSection = () => {
             <VStack spacing={4}>
               <FormControl isInvalid={false}>
                 <FormLabel htmlFor="firstName">Name</FormLabel>
-                <Input
-                  id="firstName"
-                  name="firstName"
-                />
+                <Input id="firstName" name="firstName" />
                 <FormErrorMessage></FormErrorMessage>
               </FormControl>
               <FormControl isInvalid={false}>
                 <FormLabel htmlFor="email">Email Address</FormLabel>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                />
+                <Input id="email" name="email" type="email" />
                 <FormErrorMessage></FormErrorMessage>
               </FormControl>
               <FormControl>
@@ -70,11 +80,7 @@ const LandingSection = () => {
               </FormControl>
               <FormControl isInvalid={false}>
                 <FormLabel htmlFor="comment">Your message</FormLabel>
-                <Textarea
-                  id="comment"
-                  name="comment"
-                  height={250}
-                />
+                <Textarea id="comment" name="comment" height={250} />
                 <FormErrorMessage></FormErrorMessage>
               </FormControl>
               <Button type="submit" colorScheme="purple" width="full">
