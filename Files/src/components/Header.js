@@ -33,8 +33,32 @@ const Header = () => {
     }
   };
 
+  const prevScrollY = useRef(0);
+  const boxRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (boxRef.current) {
+        if (currentScrollY > prevScrollY.current) {
+          boxRef.current.style.transform = "translateY(-200px)";
+        } else {
+          boxRef.current.style.transform = "translateY(0)";
+        }
+      }
+      prevScrollY.current = currentScrollY;
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <Box
+      ref={boxRef}
       zIndex="999"
       position="fixed"
       top={0}
@@ -69,11 +93,8 @@ const Header = () => {
                   <a href="#projects-section" onClick={handleClick("projects")}>
                     Projects
                   </a>
-                  <a
-                    href="#contactme-section"
-                    onClick={handleClick("contactme")}
-                  >
-                    Contact Me
+                  <a href="#courses-section" onClick={handleClick("courses")}>
+                    Courses
                   </a>
                 </>
               }
