@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.df6a7eab.css",
-    "main.js": "/portfolio/static/js/main.cf2fa4b0.js",
+    "main.js": "/portfolio/static/js/main.abe56116.js",
     "static/media/geosnap1.png": "/portfolio/static/media/geosnap1.b9eebc77029aa46ecbfc.png",
     "static/media/slot-machine.png": "/portfolio/static/media/slot-machine.ce887b33e46eb8e2a0ad.png",
     "static/media/profile.jpg": "/portfolio/static/media/profile.5eabb7d3489c908bfeb9.jpg",
@@ -10,10 +10,10 @@
     "static/media/preview.png": "/portfolio/static/media/preview.3b2f13bc6d7e91b1a183.png",
     "index.html": "/portfolio/index.html",
     "main.df6a7eab.css.map": "/portfolio/static/css/main.df6a7eab.css.map",
-    "main.cf2fa4b0.js.map": "/portfolio/static/js/main.cf2fa4b0.js.map"
+    "main.abe56116.js.map": "/portfolio/static/js/main.abe56116.js.map"
   },
   "entrypoints": [
     "static/css/main.df6a7eab.css",
-    "static/js/main.cf2fa4b0.js"
+    "static/js/main.abe56116.js"
   ]
 }
