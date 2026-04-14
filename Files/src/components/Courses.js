@@ -14,6 +14,16 @@ const courses = [
     url: "https://www.coursera.org/programs/career-academy-for-students-yavet/learn/introduction-to-back-end-development?authProvider=agh-university-of-krakow&source=search",
   },
   {
+    title: "Introduction to Front-End Development",
+    description: `A beginner-friendly course that teaches core 
+    web technologies like HTML, CSS, and modern UI frameworks such
+     as Bootstrap and React. Coursera It also covers the roles of front-end,
+      back-end, and full-stack developers, as well as how the internet works. 
+      Class Central No prior experience required.`,
+    getImageSrc: () => require("../images/Meta-Logo.png"),
+    url: "https://www.coursera.org/programs/career-academy-for-students-yavet/learn/introduction-to-front-end-development?authProvider=agh-university-of-krakow&source=search",
+  },
+  {
     title: "Advanced React",
     description: `This Coursera course, created by Meta, is designed 
     for developers who already understand the basics of React and want 
