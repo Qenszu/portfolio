@@ -39,7 +39,7 @@ const CourseSection = () => {
     <FullScreenSection
       isDarkBackground
       backgroundColor="#512DA8"
-      py={16}
+      py={17}
       spacing={8}
       alignItems="flex-start"
     >
